@@ -6,7 +6,7 @@ build: $(VERSIONS)
 
 define jetty-version
 $1:
-	docker build -t jetty:$(shell echo $1 | sed -e 's/\//-/g') $1
+	docker build -t rickvh/jetty:$(shell echo $1 | sed -e 's/\//-/g') $1
 endef
 $(foreach version,$(VERSIONS),$(eval $(call jetty-version,$(version))))
 
